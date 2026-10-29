@@ -61,7 +61,7 @@ npx wrangler secret put STRIPE_WEBHOOK_SECRET
 npm run deploy
 ```
 
-Deploying from Cloudflare's Git integration (Workers Builds) instead: build command `npx opennextjs-cloudflare build`, deploy command `npx opennextjs-cloudflare deploy`, and add the three `NEXT_PUBLIC_*` values as **build** variables; the secrets above go under **Variables and Secrets**.
+Deploying from Cloudflare's Git integration (Workers Builds) instead: build command `npx opennextjs-cloudflare build`, deploy command `npx opennextjs-cloudflare deploy`, preview command (if Preview builds are on) `npx opennextjs-cloudflare upload`, and add the three `NEXT_PUBLIC_*` values as **build** variables; the secrets above go under **Variables and Secrets**.
 
 **Domain:** [`wrangler.jsonc`](wrangler.jsonc) attaches the worker to `chill.thexdigital.com` as a Custom Domain, which only works if `thexdigital.com` uses Cloudflare DNS in the same account. If your DNS is elsewhere, delete the `routes` block, deploy, and add a `CNAME chill → chil.<your-subdomain>.workers.dev` at your DNS provider (or move the zone to Cloudflare).
 
