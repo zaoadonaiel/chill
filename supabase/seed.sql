@@ -31,3 +31,32 @@ on conflict (product_id, size) do nothing;
 insert into public.product_variants (product_id, size, stock, position)
 select id, 'One Size', 30, 1 from public.products where slug = 'six-panel-cap-black'
 on conflict (product_id, size) do nothing;
+
+-- Demo photos (free Unsplash images, hotlinked). Replace them from /admin.
+update public.products set images = array[
+    'https://images.unsplash.com/photo-1647797819874-f51a8a8fc5c0?w=1200&h=1200&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1615320876716-0fc796a5010f?w=1200&h=1200&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1513789181297-6f2ec112c0bc?w=1200&h=1200&fit=crop&q=80'
+  ] where slug = 'heavyweight-pullover-hoodie-black';
+update public.products set images = array[
+    'https://images.unsplash.com/photo-1499971856191-1a420a42b498?w=1200&h=1200&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1614975059251-992f11792b9f?w=1200&h=1200&fit=crop&q=80'
+  ] where slug = 'essential-crewneck-black';
+update public.products set images = array[
+    'https://images.unsplash.com/photo-1789110520164-2389992e5d0f?w=1200&h=1200&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1588117260148-b47818741c74?w=1200&h=1200&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1602573991155-21f0143bb45c?w=1200&h=1200&fit=crop&q=80'
+  ] where slug = 'relaxed-sweatpant-heather';
+update public.products set images = array[
+    'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=1200&h=1200&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1778671394516-8270eac13c42?w=1200&h=1200&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1627225924765-552d49cf47ad?w=1200&h=1200&fit=crop&q=80'
+  ] where slug = 'boxy-logo-tee-white';
+update public.products set images = array[
+    'https://images.unsplash.com/photo-1564858775545-e2d21c3ceee0?w=1200&h=1200&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1622444971167-cf7a0c4e4028?w=1200&h=1200&fit=crop&q=80'
+  ] where slug = 'zip-hoodie-charcoal';
+update public.products set images = array[
+    'https://images.unsplash.com/photo-1521369909029-2afed882baee?w=1200&h=1200&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1523380744952-b7e00e6e2ffa?w=1200&h=1200&fit=crop&q=80'
+  ] where slug = 'six-panel-cap-black';

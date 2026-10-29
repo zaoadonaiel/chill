@@ -53,14 +53,15 @@ Open `/admin` (or **Account → Admin panel**).
 
 ```bash
 npx wrangler login
-cp .env.example .env          # NEXT_PUBLIC_* values are baked into the build
+# NEXT_PUBLIC_* values are baked into the build from .env.local, with
+# .env.production.local (NEXT_PUBLIC_SITE_URL=https://chill.thexdigital.com) taking priority.
 npx wrangler secret put SUPABASE_SERVICE_ROLE_KEY
 npx wrangler secret put STRIPE_SECRET_KEY
 npx wrangler secret put STRIPE_WEBHOOK_SECRET
 npm run deploy
 ```
 
-Set `NEXT_PUBLIC_SITE_URL=https://chill.thexdigital.com` in `.env` before deploying.
+Deploying from Cloudflare's Git integration (Workers Builds) instead: build command `npx opennextjs-cloudflare build`, deploy command `npx opennextjs-cloudflare deploy`, and add the three `NEXT_PUBLIC_*` values as **build** variables; the secrets above go under **Variables and Secrets**.
 
 **Domain:** [`wrangler.jsonc`](wrangler.jsonc) attaches the worker to `chill.thexdigital.com` as a Custom Domain, which only works if `thexdigital.com` uses Cloudflare DNS in the same account. If your DNS is elsewhere, delete the `routes` block, deploy, and add a `CNAME chill → chil.<your-subdomain>.workers.dev` at your DNS provider (or move the zone to Cloudflare).
 

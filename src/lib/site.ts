@@ -7,7 +7,8 @@ export const site = {
   description: "Chil — premium heavyweight streetwear, cut and sewn in small runs.",
   // Put files in /public and set e.g. "/logo.png" and "/hero.jpg".
   logo: null as string | null,
-  heroImage: null as string | null,
+  // Demo photo from Unsplash; replace with your own campaign image.
+  heroImage: "https://images.unsplash.com/photo-1513789181297-6f2ec112c0bc?w=2400&q=80" as string | null,
 
   currency: "usd",
   // Flat-rate shipping, free above the threshold. Amounts in cents.
