@@ -1,0 +1,5 @@
+# Copy to .dev.vars for `npm run preview` (local Workers runtime).
+NEXTJS_ENV=development
+SUPABASE_SERVICE_ROLE_KEY=sb_secret_xxx
+STRIPE_SECRET_KEY=sk_test_xxx
+STRIPE_WEBHOOK_SECRET=whsec_xxx

@@ -1,0 +1,26 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "chil",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      // Self-reference binding; must match "name" above.
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "chil"
+    }
+  ],
+  "observability": { "enabled": true },
+  // Serves the site on your domain. Requires thexdigital.com to be a zone in
+  // this Cloudflare account (DNS on Cloudflare). If it isn't, remove this
+  // block and point chill.thexdigital.com at the workers.dev URL instead.
+  "routes": [{ "pattern": "chill.thexdigital.com", "custom_domain": true }]
+  // NEXT_PUBLIC_* values are baked in at build time from .env (see README).
+  // Server secrets go in via `npx wrangler secret put <NAME>`:
+  //   SUPABASE_SERVICE_ROLE_KEY, STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET
+}
