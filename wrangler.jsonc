@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "chil",
+  "name": "chill",
   "main": ".open-next/worker.js",
   "compatibility_date": "2026-10-01",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
@@ -12,7 +12,7 @@
     {
       // Self-reference binding; must match "name" above.
       "binding": "WORKER_SELF_REFERENCE",
-      "service": "chil"
+      "service": "chill"
     }
   ],
   "observability": { "enabled": true },
