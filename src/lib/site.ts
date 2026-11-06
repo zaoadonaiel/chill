@@ -1,10 +1,10 @@
 // Brand + store settings. Change these to make the store your own.
 export const site = {
-  name: "CHIL",
+  name: "C.H.ILL",
   // Shown in the header/hero when `logo` is null. Swap for your own mark.
-  wordmark: "Chil.",
+  wordmark: "C.H.ILL",
   tagline: "Quiet streetwear, made to last.",
-  description: "Chil — premium heavyweight streetwear, cut and sewn in small runs.",
+  description: "C.H.ILL — premium heavyweight streetwear, cut and sewn in small runs.",
   // Put files in /public and set e.g. "/logo.png" and "/hero.jpg".
   logo: null as string | null,
   // Demo photo from Unsplash; replace with your own campaign image.

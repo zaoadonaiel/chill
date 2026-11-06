@@ -1,4 +1,4 @@
-# Chil — streetwear store
+# C.H.ILL — streetwear store
 
 Live at **https://chill.thexdigital.com**.
 
